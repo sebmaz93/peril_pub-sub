@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	amqp "github.com/rabbitmq/amqp091-go"
+)
+
+const (
+	rmqURL = "amqp://guest:guest@localhost:5672/"
+)
 
 func main() {
-	fmt.Println("Starting Peril server...")
+	conn, err := amqp.Dial(rmqURL)
+	if err != nil {
+
+	}
+	defer conn.Close()
 }
