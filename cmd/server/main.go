@@ -13,11 +13,11 @@ import (
 )
 
 const (
-	rmqURL = "amqp://guest:guest@localhost:5672/"
+	rmqConnStr = "amqp://guest:guest@localhost:5672/"
 )
 
 func main() {
-	conn, err := amqp.Dial(rmqURL)
+	conn, err := amqp.Dial(rmqConnStr)
 	if err != nil {
 		log.Fatalf("couldn't start RMQ connection: %v", err)
 	}
